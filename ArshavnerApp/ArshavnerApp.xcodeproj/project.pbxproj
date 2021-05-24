@@ -14,7 +14,7 @@
 		F5313877265B7DBE00E47ED9 /* HikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5313875265B7DBE00E47ED9 /* HikeTableViewCell.xib */; };
 		F590186F26513AFC007BCC31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F590186E26513AFC007BCC31 /* AppDelegate.swift */; };
 		F590187126513AFC007BCC31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F590187026513AFC007BCC31 /* SceneDelegate.swift */; };
-		F590187326513AFC007BCC31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F590187226513AFC007BCC31 /* ViewController.swift */; };
+		F590187326513AFC007BCC31 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F590187226513AFC007BCC31 /* SignInVC.swift */; };
 		F590187626513AFC007BCC31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F590187426513AFC007BCC31 /* Main.storyboard */; };
 		F590187826513AFE007BCC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F590187726513AFE007BCC31 /* Assets.xcassets */; };
 		F590187B26513AFE007BCC31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F590187926513AFE007BCC31 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		F590186B26513AFC007BCC31 /* ArshavnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArshavnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F590186E26513AFC007BCC31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F590187026513AFC007BCC31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F590187226513AFC007BCC31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F590187226513AFC007BCC31 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		F590187526513AFC007BCC31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F590187726513AFE007BCC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F590187A26513AFE007BCC31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A209197265C06B500176AEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F590187226513AFC007BCC31 /* SignInVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F52DB1382657FF13009813AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +95,9 @@
 			children = (
 				F5313879265B7DD000E47ED9 /* HikeCell */,
 				F52DB1382657FF13009813AB /* Model */,
+				3A209197265C06B500176AEC /* Controller */,
 				F590186E26513AFC007BCC31 /* AppDelegate.swift */,
 				F590187026513AFC007BCC31 /* SceneDelegate.swift */,
-				F590187226513AFC007BCC31 /* ViewController.swift */,
 				F590187426513AFC007BCC31 /* Main.storyboard */,
 				F590187726513AFE007BCC31 /* Assets.xcassets */,
 				F590187926513AFE007BCC31 /* LaunchScreen.storyboard */,
@@ -173,7 +181,7 @@
 				F52DB13E26580238009813AB /* Comment.swift in Sources */,
 				F5313876265B7DBE00E47ED9 /* HikeTableViewCell.swift in Sources */,
 				F52DB1362657FC9F009813AB /* User.swift in Sources */,
-				F590187326513AFC007BCC31 /* ViewController.swift in Sources */,
+				F590187326513AFC007BCC31 /* SignInVC.swift in Sources */,
 				F590186F26513AFC007BCC31 /* AppDelegate.swift in Sources */,
 				F590187126513AFC007BCC31 /* SceneDelegate.swift in Sources */,
 			);
