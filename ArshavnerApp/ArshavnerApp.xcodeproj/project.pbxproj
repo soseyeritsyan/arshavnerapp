@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F0265EC34500B42B31 /* SignUpVC.swift */; };
+		3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F2265EC37100B42B31 /* HikeListVC.swift */; };
 		F52DB1362657FC9F009813AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1352657FC9F009813AB /* User.swift */; };
 		F52DB13A2657FF54009813AB /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1392657FF54009813AB /* Hike.swift */; };
 		F52DB13E26580238009813AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB13D26580238009813AB /* Comment.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7577F0265EC34500B42B31 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		3A7577F2265EC37100B42B31 /* HikeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListVC.swift; sourceTree = "<group>"; };
 		F52DB1352657FC9F009813AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F52DB1392657FF54009813AB /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
 		F52DB13D26580238009813AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				F590187226513AFC007BCC31 /* SignInVC.swift */,
+				3A7577F0265EC34500B42B31 /* SignUpVC.swift */,
+				3A7577F2265EC37100B42B31 /* HikeListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */,
+				3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */,
 				F52DB13A2657FF54009813AB /* Hike.swift in Sources */,
 				F52DB13E26580238009813AB /* Comment.swift in Sources */,
 				F5313876265B7DBE00E47ED9 /* HikeTableViewCell.swift in Sources */,
