@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInVC: UIViewController {
 
@@ -22,11 +23,27 @@ class SignInVC: UIViewController {
 //        check text fields are nor empty
         guard emailTextField.text?.isEmpty == false else { return }
         guard passwordTextField.text?.isEmpty == false else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id)
-        self.navigationController?.pushViewController(secondVC, animated: true)//(secondVC, sender: self)
-//        TO DO: ADD EMAIL VALIDATION
+        
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            self!.login()
+        }
+    }
+    
+//        TODO: ADD EMAIL VALIDATION
 
+    
+    func login(){
+//            if user exist
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id)
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }
     }
     
     @IBAction func createAccount(_sender: UIButton) {

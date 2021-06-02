@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A69A30D2667EAA300413D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */; };
 		3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F0265EC34500B42B31 /* SignUpVC.swift */; };
 		3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F2265EC37100B42B31 /* HikeListVC.swift */; };
+		593149F5AE4CE7BA9EC322A4 /* Pods_ArshavnerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7643E62E3CB465AEC7997D1 /* Pods_ArshavnerApp.framework */; };
 		F52DB1362657FC9F009813AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1352657FC9F009813AB /* User.swift */; };
 		F52DB13A2657FF54009813AB /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1392657FF54009813AB /* Hike.swift */; };
 		F52DB13E26580238009813AB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB13D26580238009813AB /* Comment.swift */; };
@@ -23,8 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A7577F0265EC34500B42B31 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		3A7577F2265EC37100B42B31 /* HikeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListVC.swift; sourceTree = "<group>"; };
+		4C8A8CD5912C371DF94D176F /* Pods-ArshavnerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArshavnerApp.release.xcconfig"; path = "Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp.release.xcconfig"; sourceTree = "<group>"; };
+		B7643E62E3CB465AEC7997D1 /* Pods_ArshavnerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArshavnerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41DA094C6D265505DE35B7A /* Pods-ArshavnerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArshavnerApp.debug.xcconfig"; path = "Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F52DB1352657FC9F009813AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F52DB1392657FF54009813AB /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
 		F52DB13D26580238009813AB /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -45,12 +51,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593149F5AE4CE7BA9EC322A4 /* Pods_ArshavnerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B6488D7795184A02AA533F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7643E62E3CB465AEC7997D1 /* Pods_ArshavnerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A209197265C06B500176AEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +74,16 @@
 				3A7577F2265EC37100B42B31 /* HikeListVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		831A1950A55DBB64D9AF0A85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D41DA094C6D265505DE35B7A /* Pods-ArshavnerApp.debug.xcconfig */,
+				4C8A8CD5912C371DF94D176F /* Pods-ArshavnerApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F52DB1382657FF13009813AB /* Model */ = {
@@ -85,6 +110,8 @@
 			children = (
 				F590186D26513AFC007BCC31 /* ArshavnerApp */,
 				F590186C26513AFC007BCC31 /* Products */,
+				831A1950A55DBB64D9AF0A85 /* Pods */,
+				2B6488D7795184A02AA533F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +133,7 @@
 				F590187026513AFC007BCC31 /* SceneDelegate.swift */,
 				F590187426513AFC007BCC31 /* Main.storyboard */,
 				F590187726513AFE007BCC31 /* Assets.xcassets */,
+				3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */,
 				F590187926513AFE007BCC31 /* LaunchScreen.storyboard */,
 				F590187C26513AFE007BCC31 /* Info.plist */,
 			);
@@ -119,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F590187F26513AFE007BCC31 /* Build configuration list for PBXNativeTarget "ArshavnerApp" */;
 			buildPhases = (
+				7785B72EE7FE7F19A36E9E3E /* [CP] Check Pods Manifest.lock */,
 				F590186726513AFC007BCC31 /* Sources */,
 				F590186826513AFC007BCC31 /* Frameworks */,
 				F590186926513AFC007BCC31 /* Resources */,
+				FCD67198C534A76C17287288 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,12 +201,55 @@
 			files = (
 				F590187B26513AFE007BCC31 /* LaunchScreen.storyboard in Resources */,
 				F590187826513AFE007BCC31 /* Assets.xcassets in Resources */,
+				3A69A30D2667EAA300413D90 /* GoogleService-Info.plist in Resources */,
 				F5313877265B7DBE00E47ED9 /* HikeTableViewCell.xib in Resources */,
 				F590187626513AFC007BCC31 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7785B72EE7FE7F19A36E9E3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArshavnerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCD67198C534A76C17287288 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F590186726513AFC007BCC31 /* Sources */ = {
@@ -335,6 +408,7 @@
 		};
 		F590188026513AFE007BCC31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D41DA094C6D265505DE35B7A /* Pods-ArshavnerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -353,6 +427,7 @@
 		};
 		F590188126513AFE007BCC31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C8A8CD5912C371DF94D176F /* Pods-ArshavnerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

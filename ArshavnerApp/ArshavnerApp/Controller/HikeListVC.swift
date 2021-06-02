@@ -15,9 +15,14 @@ class HikeListVC: UIViewController {
     @IBOutlet weak var stepCountLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var HikeListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
 }
