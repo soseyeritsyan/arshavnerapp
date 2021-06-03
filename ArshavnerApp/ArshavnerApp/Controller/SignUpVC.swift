@@ -64,20 +64,23 @@ class SignUpVC: UIViewController {
                     return
                 }
                 
+                var myUser = User(name: self.nameTextField.text!, surName: self.surnmeTextField.text!, email: self.emailTextField.text!, phoneNumber: self.phoneTextField.text, diseases: self.diseasesTextField.text, stepCount: self.stepcountTextField.text as? Int ?? 0, userPhoto: nil)
 //                create user info
-                let userData = ["name": self.nameTextField.text,
-                                "surname": self.surnmeTextField.text,
-                                "phone": self.phoneTextField.text,
-                                "email": self.emailTextField.text,
-                                "stepcount": self.stepcountTextField.text,
-                                "diseases": self.diseasesTextField.text,
-                                    ]
+                let userData = ["name": myUser.name,
+                                "surname": myUser.surName,
+                                "phone": myUser.phoneNumber ?? "nil",
+                                "email": myUser.email,
+                                "stepcount": myUser.stepCount,
+                                "level": myUser.level.rawValue,
+                                "diseases": myUser.diseases
+                ]  as NSDictionary
 //                save user info in realtime db
                 self.realTimeDBRef.child("users").child(user.uid).setValue(userData)
 
 //                navigate to home screen
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id)
+                let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id) as HikeListVC
+                secondVC.uid = Auth.auth().currentUser!.uid
                 self.navigationController?.pushViewController(secondVC, animated: true)
             })
         }

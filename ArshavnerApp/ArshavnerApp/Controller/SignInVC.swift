@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class SignInVC: UIViewController {
 
@@ -41,7 +42,8 @@ class SignInVC: UIViewController {
         if Auth.auth().currentUser != nil {
             print(Auth.auth().currentUser?.uid)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id)
+            let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id) as HikeListVC
+            secondVC.uid = Auth.auth().currentUser!.uid
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
@@ -51,3 +53,23 @@ class SignInVC: UIViewController {
     }
 }
 
+/*
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ setupLoadingControllerUI()
+ checkIfUserIsSignedIn()
+}
+
+private func checkIfUserIsSignedIn() {
+
+ Auth.auth().addStateDidChangeListener { (auth, user) in
+     if user != nil {
+         // user is signed in
+         // go to feature controller
+     } else {
+          // user is not signed in
+          // go to login controller
+     }
+ }
+}
+ */
