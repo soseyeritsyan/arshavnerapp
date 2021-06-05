@@ -248,6 +248,7 @@
                         <outlet property="passwordTextField" destination="QEH-9F-O58" id="axo-1N-TlS"/>
                         <outlet property="phoneTextField" destination="14Q-jt-neG" id="6tN-Rw-8Za"/>
                         <outlet property="repeatpswTextField" destination="L4V-aa-Bup" id="ITz-YK-wuw"/>
+                        <outlet property="signUpButton" destination="aFt-mp-Gq1" id="jqc-Be-MHt"/>
                         <outlet property="stepcountTextField" destination="hs3-WY-3ly" id="ExQ-lb-aEf"/>
                         <outlet property="surnmeTextField" destination="bfG-tj-VkX" id="ks0-mv-Ual"/>
                     </connections>
@@ -307,6 +308,9 @@
                                         <state key="normal" title="Edit">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="editUserInfo:" destination="Of6-JT-9by" eventType="touchUpInside" id="cyL-O4-5Wp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -314,6 +318,10 @@
                                 <rect key="frame" x="0.0" y="193" width="414" height="703"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Of6-JT-9by" id="meV-RL-5mq"/>
+                                    <outlet property="delegate" destination="Of6-JT-9by" id="fEe-70-qYa"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aJ1-Gk-iol"/>
@@ -341,7 +349,7 @@
         <!--HikeDetail-->
         <scene sceneID="Tfy-IC-fKj">
             <objects>
-                <viewController title="HikeDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I83-Ql-pNh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HikeDetail" title="HikeDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I83-Ql-pNh" customClass="HikeDetailsVC" customModule="ArshavnerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lf0-9Q-6WY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,14 +10,13 @@ import FirebaseAuth
 import Firebase
 
 class SignInVC: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        // Do any additional setup after loading the view.
+        
     }
 
     @IBAction func clickedSignIn(_sender: UIButton) {
@@ -34,13 +33,9 @@ class SignInVC: UIViewController {
         }
     }
     
-//        TODO: ADD EMAIL VALIDATION
-
-    
     func login(){
 //            if user exist
         if Auth.auth().currentUser != nil {
-            print(Auth.auth().currentUser?.uid)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id) as HikeListVC
             secondVC.uid = Auth.auth().currentUser!.uid
@@ -52,24 +47,3 @@ class SignInVC: UIViewController {
         // when this button clicked navigate to signup vc
     }
 }
-
-/*
- override func viewDidLoad() {
- super.viewDidLoad()
- setupLoadingControllerUI()
- checkIfUserIsSignedIn()
-}
-
-private func checkIfUserIsSignedIn() {
-
- Auth.auth().addStateDidChangeListener { (auth, user) in
-     if user != nil {
-         // user is signed in
-         // go to feature controller
-     } else {
-          // user is not signed in
-          // go to login controller
-     }
- }
-}
- */

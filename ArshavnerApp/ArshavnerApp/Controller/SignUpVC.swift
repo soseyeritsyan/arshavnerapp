@@ -11,8 +11,11 @@ import Firebase
 
 class SignUpVC: UIViewController {
     static let id = "SignUpVC"
-    let realTimeDBRef = Database.database().reference()
+    var realTimeDBRef: DatabaseReference!
 
+    var buttonText = "Sign Up"
+    @IBOutlet weak var signUpButton: UIButton!
+    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnmeTextField: UITextField!
@@ -25,6 +28,8 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signUpButton.titleLabel?.text = buttonText
+        realTimeDBRef = Database.database().reference()
         messageLabel.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +37,6 @@ class SignUpVC: UIViewController {
     }
     
 //    MARK:add email validation
-//    MARK:add password validation
     
     @IBAction func signUp(_ sender: UIButton) {
         

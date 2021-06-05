@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A54FA11266B6F49003BD116 /* HikeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FA10266B6F49003BD116 /* HikeDetailsVC.swift */; };
 		3A69A30D2667EAA300413D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */; };
 		3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F0265EC34500B42B31 /* SignUpVC.swift */; };
 		3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F2265EC37100B42B31 /* HikeListVC.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A54FA10266B6F49003BD116 /* HikeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetailsVC.swift; sourceTree = "<group>"; };
 		3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A7577F0265EC34500B42B31 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		3A7577F2265EC37100B42B31 /* HikeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				F590187226513AFC007BCC31 /* SignInVC.swift */,
 				3A7577F0265EC34500B42B31 /* SignUpVC.swift */,
 				3A7577F2265EC37100B42B31 /* HikeListVC.swift */,
+				3A54FA10266B6F49003BD116 /* HikeDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -82,7 +85,6 @@
 				D41DA094C6D265505DE35B7A /* Pods-ArshavnerApp.debug.xcconfig */,
 				4C8A8CD5912C371DF94D176F /* Pods-ArshavnerApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -262,6 +264,7 @@
 				F52DB13E26580238009813AB /* Comment.swift in Sources */,
 				F5313876265B7DBE00E47ED9 /* HikeTableViewCell.swift in Sources */,
 				F52DB1362657FC9F009813AB /* User.swift in Sources */,
+				3A54FA11266B6F49003BD116 /* HikeDetailsVC.swift in Sources */,
 				F590187326513AFC007BCC31 /* SignInVC.swift in Sources */,
 				F590186F26513AFC007BCC31 /* AppDelegate.swift in Sources */,
 				F590187126513AFC007BCC31 /* SceneDelegate.swift in Sources */,
