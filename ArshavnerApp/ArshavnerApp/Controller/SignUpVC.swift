@@ -8,14 +8,18 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 
-class SignUpVC: UIViewController {
+
+class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     static let id = "SignUpVC"
     var realTimeDBRef: DatabaseReference!
-
-    var buttonText = "Sign Up"
-    @IBOutlet weak var signUpButton: UIButton!
+    let storage = Storage.storage()
+    var storageRef: StorageReference!
+    var imageURL: String!
+    var imageData: Data?
     
+    @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnmeTextField: UITextField!
@@ -28,15 +32,16 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpButton.titleLabel?.text = buttonText
         realTimeDBRef = Database.database().reference()
+        storageRef = storage.reference()
+
         messageLabel.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
        // navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-//    MARK:add email validation
+//    MARK: TODO add email validation
     
     @IBAction func signUp(_ sender: UIButton) {
         
@@ -67,12 +72,18 @@ class SignUpVC: UIViewController {
                     print(" error: ", error )
                     return
                 }
-                
-                var myUser = User(name: self.nameTextField.text!, surName: self.surnmeTextField.text!, email: self.emailTextField.text!, phoneNumber: self.phoneTextField.text, diseases: self.diseasesTextField.text, stepCount: self.stepcountTextField.text as? Int ?? 0, userPhoto: nil)
+//                if user upload image
+                if self.imageData != nil {
+                    let fileName = user.uid + ".png"
+                    FirebaseManager().uploadImageData(data: self.imageData!, serverFileName: fileName) { (isSuccess, url) in
+                        print("uploadImageData: \(isSuccess), \(url)")
+                    }
+                }
+                let myUser = User(name: self.nameTextField.text!, surName: self.surnmeTextField.text!, email: self.emailTextField.text!, phoneNumber: self.phoneTextField.text ?? "", diseases: self.diseasesTextField.text ?? "", stepCount: Int(self.stepcountTextField.text ?? "") ?? 0, imageURL: self.imageURL ?? "")
 //                create user info
                 let userData = ["name": myUser.name,
                                 "surname": myUser.surName,
-                                "phone": myUser.phoneNumber ?? "nil",
+                                "phone": myUser.phoneNumber,
                                 "email": myUser.email,
                                 "stepcount": myUser.stepCount,
                                 "level": myUser.level.rawValue,
@@ -91,6 +102,29 @@ class SignUpVC: UIViewController {
     }
 
     @IBAction func addPhoto(_ sender: UIButton) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(info)
+        if let image = info[UIImagePickerController.InfoKey(rawValue:     "UIImagePickerControllerEditedImage")] as? UIImage {
+            if let data = image.pngData() {
+//                 convert your UIImage into Data object using png representation
+                self.imageData = data
+                self.addImageButton.setTitle("Image Selected", for: .normal)
+            }
+
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
+
+

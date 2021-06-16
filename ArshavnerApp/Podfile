@@ -13,6 +13,7 @@ target 'ArshavnerApp' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 
 end

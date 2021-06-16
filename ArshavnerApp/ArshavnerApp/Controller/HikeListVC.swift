@@ -31,6 +31,11 @@ class HikeListVC: UIViewController {
         let nibCell = UINib(nibName: "HikeTableViewCell", bundle: nil)
         HikeListTableView.register(nibCell, forCellReuseIdentifier: HikeTableViewCell.id)
 //        take data and change userinfo
+//        FirebaseManager().getUserInfo(uid: uid)
+        //self.userInfo = FirebaseManager.userInfo)
+//        if FirebaseManager.userInfo != nil {
+//            self.updateView(info: FirebaseManager.userInfo!)
+//        }
         dbHandle = realTimeDBRef.child("users").child(uid).observe(.value) { snapshot in
             let value = snapshot.value as? [String: Any]
             if value != nil {
@@ -43,7 +48,7 @@ class HikeListVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //updateView(info: userInfo)
+        //updateView(info: FirebaseManager.userInfo!)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -51,7 +56,7 @@ class HikeListVC: UIViewController {
     func updateView(info: [String:Any]) {
         let nameandsurname = "\( info["name"] as! String ) \( info["surname"] as! String)"
         self.nameAndSurnameLabel.text = nameandsurname
-        self.stepCountLabel.text = info["stepcount"] as! String
+        self.stepCountLabel.text = info["stepcount"] as? String
         let levelValue = info["level"] as! Int
         switch levelValue {
         case 1:
@@ -66,14 +71,25 @@ class HikeListVC: UIViewController {
         default:
             print("error")
         }
-
+        let imageName = uid + ".png"
+        let reference = Storage.storage().reference(withPath: "users/\(imageName)")
+              reference.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                if let _error = error {
+                   print(_error)
+              } else {
+                if let _data  = data {
+                   let myImage:UIImage! = UIImage(data: _data)
+                     self.userImage.image = myImage
+                }
+             }
+        }
     }
     // MARK: TODO
     @IBAction func editUserInfo(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondVC = storyboard.instantiateViewController(identifier: SignUpVC.id) as SignUpVC
-//        secondVC.buttonText = Auth.auth().currentUser!.uid
-//        self.navigationController?.pushViewController(secondVC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editVC = storyboard.instantiateViewController(identifier: EditInfoVC.id) as EditInfoVC
+        editVC.uid = uid
+        self.navigationController?.pushViewController(editVC, animated: true)
     }
     
 }

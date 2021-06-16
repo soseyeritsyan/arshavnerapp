@@ -11,6 +11,8 @@
 		3A69A30D2667EAA300413D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */; };
 		3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F0265EC34500B42B31 /* SignUpVC.swift */; };
 		3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7577F2265EC37100B42B31 /* HikeListVC.swift */; };
+		3ABE95AA267133BA002152C6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE95A9267133BA002152C6 /* FirebaseManager.swift */; };
+		3AD227752679BB550043BAC1 /* EditInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD227742679BB550043BAC1 /* EditInfoVC.swift */; };
 		593149F5AE4CE7BA9EC322A4 /* Pods_ArshavnerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7643E62E3CB465AEC7997D1 /* Pods_ArshavnerApp.framework */; };
 		F52DB1362657FC9F009813AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1352657FC9F009813AB /* User.swift */; };
 		F52DB13A2657FF54009813AB /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DB1392657FF54009813AB /* Hike.swift */; };
@@ -30,6 +32,8 @@
 		3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A7577F0265EC34500B42B31 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		3A7577F2265EC37100B42B31 /* HikeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeListVC.swift; sourceTree = "<group>"; };
+		3ABE95A9267133BA002152C6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		3AD227742679BB550043BAC1 /* EditInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoVC.swift; sourceTree = "<group>"; };
 		4C8A8CD5912C371DF94D176F /* Pods-ArshavnerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArshavnerApp.release.xcconfig"; path = "Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp.release.xcconfig"; sourceTree = "<group>"; };
 		B7643E62E3CB465AEC7997D1 /* Pods_ArshavnerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArshavnerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41DA094C6D265505DE35B7A /* Pods-ArshavnerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArshavnerApp.debug.xcconfig"; path = "Target Support Files/Pods-ArshavnerApp/Pods-ArshavnerApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				F590187226513AFC007BCC31 /* SignInVC.swift */,
 				3A7577F0265EC34500B42B31 /* SignUpVC.swift */,
 				3A7577F2265EC37100B42B31 /* HikeListVC.swift */,
+				3AD227742679BB550043BAC1 /* EditInfoVC.swift */,
 				3A54FA10266B6F49003BD116 /* HikeDetailsVC.swift */,
 			);
 			path = Controller;
@@ -133,6 +138,7 @@
 				3A209197265C06B500176AEC /* Controller */,
 				F590186E26513AFC007BCC31 /* AppDelegate.swift */,
 				F590187026513AFC007BCC31 /* SceneDelegate.swift */,
+				3ABE95A9267133BA002152C6 /* FirebaseManager.swift */,
 				F590187426513AFC007BCC31 /* Main.storyboard */,
 				F590187726513AFE007BCC31 /* Assets.xcassets */,
 				3A69A30C2667EAA300413D90 /* GoogleService-Info.plist */,
@@ -259,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7577F3265EC37100B42B31 /* HikeListVC.swift in Sources */,
+				3ABE95AA267133BA002152C6 /* FirebaseManager.swift in Sources */,
 				3A7577F1265EC34500B42B31 /* SignUpVC.swift in Sources */,
 				F52DB13A2657FF54009813AB /* Hike.swift in Sources */,
+				3AD227752679BB550043BAC1 /* EditInfoVC.swift in Sources */,
 				F52DB13E26580238009813AB /* Comment.swift in Sources */,
 				F5313876265B7DBE00E47ED9 /* HikeTableViewCell.swift in Sources */,
 				F52DB1362657FC9F009813AB /* User.swift in Sources */,

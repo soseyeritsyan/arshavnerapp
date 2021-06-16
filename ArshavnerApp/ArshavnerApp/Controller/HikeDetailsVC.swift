@@ -2,7 +2,7 @@
 //  HikeDetailsVC.swift
 //  ArshavnerApp
 //
-//  Created by Shake Yeritsyan on 05.06.21.
+//  Created by sose yeritsyan on 05.06.21.
 //
 
 import UIKit

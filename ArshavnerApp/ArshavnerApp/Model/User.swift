@@ -16,7 +16,7 @@ struct User {
     var phoneNumber: String?
     var diseases: String?
     var stepCount: Int
-    var userPhoto: UIImage?
+    var imageURL: String?
     
     var level: Level {
         return.easy
@@ -29,7 +29,7 @@ struct User {
         self.phoneNumber = info["phone"] as? String
         self.diseases = info["diseases"] as? String
         self.stepCount = info["stepcount"] as! Int
-        //self.userPhoto = info["name"] as! String
+        self.imageURL = info["imageURL"] as! String
         
     }
 }
