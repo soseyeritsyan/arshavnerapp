@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Bcr-QZ-bgl">
-                                <rect key="frame" x="20" y="349" width="374" height="198"/>
+                                <rect key="frame" x="20" y="322.5" width="374" height="251"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlm-Ao-t4p">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
@@ -50,21 +50,35 @@
                                             <segue destination="E7c-1y-q5A" kind="show" id="ASr-5s-Uxu"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-Yu-B1a">
+                                        <rect key="frame" x="0.0" y="212" width="374" height="39"/>
+                                        <state key="normal" title="Forgot password ?"/>
+                                    </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXL-6I-3UU">
+                                <rect key="frame" x="20" y="242" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Bcr-QZ-bgl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ccr-g5-xKE"/>
+                            <constraint firstItem="Bcr-QZ-bgl" firstAttribute="top" secondItem="FXL-6I-3UU" secondAttribute="bottom" constant="60" id="DJT-ot-ddy"/>
                             <constraint firstItem="Bcr-QZ-bgl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Duj-db-wTa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FXL-6I-3UU" secondAttribute="trailing" constant="20" id="Wcq-Ih-Bnq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bcr-QZ-bgl" secondAttribute="trailing" constant="20" id="eli-zs-5Qr"/>
+                            <constraint firstItem="FXL-6I-3UU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ha2-4L-zdN"/>
                             <constraint firstItem="Bcr-QZ-bgl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lSA-Ax-2cO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Sm-Ly-VNq"/>
                     <connections>
                         <outlet property="emailTextField" destination="jlm-Ao-t4p" id="bAb-Ep-eIb"/>
+                        <outlet property="messageLabel" destination="FXL-6I-3UU" id="gpp-hW-a7Q"/>
                         <outlet property="passwordTextField" destination="5UA-jU-nkS" id="vH1-C3-Yjy"/>
                         <segue destination="Of6-JT-9by" kind="show" id="vH3-ti-75T"/>
                     </connections>

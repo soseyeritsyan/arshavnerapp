@@ -13,10 +13,11 @@ class SignInVC: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var messageLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        messageLabel.isHidden = true
     }
 
     @IBAction func clickedSignIn(_sender: UIButton) {
@@ -28,9 +29,11 @@ class SignInVC: UIViewController {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
           guard let strongSelf = self else { return }
             if let error = error {
+                self!.messageLabel.text = error.localizedDescription
                 print(error.localizedDescription)
+            } else {
+                self!.login()
             }
-            self!.login()
         }
     }
     
