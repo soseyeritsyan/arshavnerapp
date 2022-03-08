@@ -8,7 +8,7 @@
 import UIKit
 
 class HikeDetailsVC: UIViewController {
-
+    static let id = "HikeDetail"
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)

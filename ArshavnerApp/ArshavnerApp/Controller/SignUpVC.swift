@@ -49,7 +49,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         if nameTextField.text?.isEmpty == true || surnmeTextField.text?.isEmpty == true || emailTextField.text?.isEmpty == true || passwordTextField.text?.isEmpty == true || repeatpswTextField.text?.isEmpty == true || stepcountTextField.text?.isEmpty == true {
             messageLabel.isHidden = false
-            messageLabel.text = "*End fill in all required fields"
+            messageLabel.text = "* End fill in all required fields"
         }
         
 //        check if password lenght is not short than 6
@@ -61,7 +61,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 //        check if paswords match
         else if passwordTextField.text != repeatpswTextField.text {
             messageLabel.isHidden = false
-            messageLabel.text = "*Password does not match"
+            messageLabel.text = "* Password does not match"
         }
         
 //        if all is ok
@@ -95,7 +95,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
 //                navigate to home screen
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id) as HikeListVC
-                secondVC.uid = Auth.auth().currentUser!.uid
+                uid = Auth.auth().currentUser!.uid
                 self.navigationController?.pushViewController(secondVC, animated: true)
             })
         }

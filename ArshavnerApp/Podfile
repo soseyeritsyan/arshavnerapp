@@ -6,7 +6,7 @@ target 'ArshavnerApp' do
   use_frameworks!
 
   # Pods for ArshavnerApp
-
+  pod 'Kingfisher'
   # add pods for desired Firebase products
 
   pod 'Firebase/Auth'

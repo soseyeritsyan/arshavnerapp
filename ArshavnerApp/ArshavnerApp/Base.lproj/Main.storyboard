@@ -47,7 +47,6 @@
                                         <state key="normal" title="Don't have account yet? "/>
                                         <connections>
                                             <action selector="createAccountWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apQ-nH-uRk"/>
-                                            <segue destination="E7c-1y-q5A" kind="show" id="ASr-5s-Uxu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-Yu-B1a">
@@ -81,6 +80,7 @@
                         <outlet property="messageLabel" destination="FXL-6I-3UU" id="gpp-hW-a7Q"/>
                         <outlet property="passwordTextField" destination="5UA-jU-nkS" id="vH1-C3-Yjy"/>
                         <segue destination="Of6-JT-9by" kind="show" id="vH3-ti-75T"/>
+                        <segue destination="E7c-1y-q5A" kind="show" id="0Gt-gb-tjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,7 +90,7 @@
         <!--SignUp-->
         <scene sceneID="ZOc-LB-eAh">
             <objects>
-                <viewController storyboardIdentifier="SignUp" title="SignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E7c-1y-q5A" customClass="SignUpVC" customModule="ArshavnerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" title="SignUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E7c-1y-q5A" customClass="SignUpVC" customModule="ArshavnerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pzz-G2-hbU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -687,10 +687,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJM-UD-G5W">
                                         <rect key="frame" x="0.0" y="289" width="374" height="30"/>
                                         <state key="normal" title="Select profile picture"/>
+                                        <connections>
+                                            <action selector="changeImage:" destination="N9Y-JO-9Ej" eventType="touchUpInside" id="nBt-w2-Uda"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umk-AR-YsX">
                                         <rect key="frame" x="0.0" y="331" width="374" height="30"/>
                                         <state key="normal" title="change password"/>
+                                        <connections>
+                                            <action selector="changePassword:" destination="N9Y-JO-9Ej" eventType="touchUpInside" id="pZm-P4-IHa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exc-19-eFK">
                                         <rect key="frame" x="0.0" y="373" width="374" height="30"/>
@@ -698,6 +704,9 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeInfo:" destination="N9Y-JO-9Ej" eventType="touchUpInside" id="8bD-fN-7TZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -713,7 +722,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YMT-ud-4Et"/>
                     <connections>
-                        <outlet property="addImageButton" destination="fJM-UD-G5W" id="NuB-Is-9lp"/>
+                        <outlet property="addImageButton" destination="fJM-UD-G5W" id="FhF-6s-cBX"/>
                         <outlet property="diseasesTextField" destination="Lfn-HM-lav" id="4dk-YI-heA"/>
                         <outlet property="messageLabel" destination="fgW-nj-jro" id="eVc-vm-l9X"/>
                         <outlet property="nameTextField" destination="PjY-gX-yfB" id="qT0-W7-bgA"/>

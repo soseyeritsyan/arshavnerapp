@@ -21,18 +21,21 @@ class SignInVC: UIViewController {
     }
 
     @IBAction func clickedSignIn(_sender: UIButton) {
-//        check text fields are nor empty
-        guard emailTextField.text?.isEmpty == false else { return }
-        guard passwordTextField.text?.isEmpty == false else { return }
-        
-        
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-            if let error = error {
-                self!.messageLabel.text = error.localizedDescription
-                print(error.localizedDescription)
-            } else {
-                self!.login()
+                
+//        check text fields are not empty
+        if emailTextField.text?.isEmpty == true || passwordTextField.text?.isEmpty == true {
+            messageLabel.text = "* End fill in all required fields"
+        } else {
+
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { [weak self] authResult, error in
+                guard self != nil else { return }
+                if let error = error {
+                    self!.messageLabel.isHidden = false
+                    self!.messageLabel.text = "\(error.localizedDescription)"
+                    print("signin error: ", error.localizedDescription)
+                } else {
+                    self!.login()
+                }
             }
         }
     }
@@ -42,12 +45,16 @@ class SignInVC: UIViewController {
         if Auth.auth().currentUser != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = storyboard.instantiateViewController(identifier: HikeListVC.id) as HikeListVC
-            secondVC.uid = Auth.auth().currentUser!.uid
-            self.navigationController?.pushViewController(secondVC, animated: true)
+            uid = Auth.auth().currentUser!.uid
+            self.navigationController?.show(secondVC, sender: nil)//(secondVC, animated: true, completion: nil)//(secondVC, sender: nil)//(secondVC, animated: true)
         }
     }
     
     @IBAction func createAccount(_sender: UIButton) {
-        // when this button clicked navigate to signup vc
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: SignUpVC.id) as SignUpVC
+       // secondVC.uid = Auth.auth().currentUser!.uid
+        self.navigationController?.show(secondVC, sender: nil)//(secondVC, animated: true)
     }
 }
